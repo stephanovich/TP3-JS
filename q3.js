@@ -32,8 +32,11 @@ createHeader()
 let divAlunos = document.createElement("div");
 divAlunos.id = "lista";
 divQ3.appendChild(divAlunos);
+let div_rodape = document.createElement("div");
+divQ3.appendChild(div_rodape);
+div_rodape.style.backgroundColor = "#d3d3d3";
 
-
+let aprovados = 0;
 
 for (let aluno of listaAlunos){
   let divAluno = document.createElement("div");
@@ -56,6 +59,7 @@ for (let aluno of listaAlunos){
     divNumero.style.backgroundColor = 'green';
     divNota.style.backgroundColor = 'green';
     divSituacao.style.backgroundColor = 'green';
+    aprovados++;
   } else {
     divNumero.style.backgroundColor = 'red';
     divNota.style.backgroundColor = 'red';
@@ -63,6 +67,8 @@ for (let aluno of listaAlunos){
   }
   divAlunos.appendChild(divAluno);
 }
+
+rodape();
 
 function createHeader(){
   let cab = document.createElement("div");
@@ -79,4 +85,8 @@ function createHeader(){
   cab.appendChild(notaCab);
   cab.appendChild(sitCab);
   divQ3.appendChild(cab);
+}
+
+function rodape(){
+  div_rodape.innerText = `Do total de ${qtdAlunos} alunos, ${aprovados} (${Math.round(aprovados/qtdAlunos * 100)}%) foram aprovados e ${qtdAlunos - aprovados} (${Math.round(((qtdAlunos - aprovados) / qtdAlunos) * 100)}%) foram reprovados.`;
 }

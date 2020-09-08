@@ -8,7 +8,7 @@ let div_fat = document.createElement("div");
 let div_btn2 = document.createElement("div");
 let div_res2 = document.createElement("div");
 div_res2.id = "resultadoQ2";  
-div_res2.style = "width: 40%; background-color: green; margin-top: 5px; color: #FFFFFF"
+div_res2.style = "width: 40%; background-color: #d3d3d3; margin-top: 5px;"
 
 let labelfat = document.createElement("label");
 labelfat.textContent = "Calcular fatorial: ";

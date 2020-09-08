@@ -2,3 +2,10 @@ body{
   font-size: 1em;
 
 }
+
+#rcorners1 {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px; 
+  width: 40%;
+}

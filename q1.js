@@ -8,7 +8,7 @@ let div_max = document.createElement("div");
 let div_btn = document.createElement("div");
 let div_res = document.createElement("div");
 div_res.id = "resultadoQ1";  
-div_res.style = "width: 40%; background-color: green; margin-top: 5px; color: #FFFFFF"
+div_res.style = "width: 40%; background-color: #d3d3d3; margin-top: 5px;"
 
 let label1 = document.createElement("label");
 label1.textContent = "Valor mínimo: ";
