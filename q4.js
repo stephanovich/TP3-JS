@@ -4,7 +4,6 @@ let div_maxQ4 = document.createElement("div");
 let div_btnQ4 = document.createElement("div");
 let div_tituloQ4 = document.createElement("h1");
 let div_resultQ4 = document.createElement("div");
-div_resultQ4.style = "background-Color: #d3d3d3;width: 40%;";
 div_tituloQ4.innerText = "Questão 04"
 
 let divQ4 = document.querySelector("#q4");
@@ -20,23 +19,24 @@ divQ4.appendChild(div_resultQ4);
 
 let label_qtdQ4 = document.createElement("label");
 label_qtdQ4.innerText = "Quantidade de números: ";
+label_qtdQ4.className = "Q4";
 
 let input_qtd04 = document.createElement("input")
 input_qtd04.type = "number";
 input_qtd04.id = "qtQ4";
-input_qtd04.style = "margin-top: 5px;"
+input_qtd04.style = "margin-top: 5px; "
 
 let label_mindQ4 = document.createElement("label");
 label_mindQ4.innerText = "Número mínimo: ";
-
+label_mindQ4.className = "Q4";
 let input_mind04 = document.createElement("input")
 input_mind04.type = "number";
 input_mind04.id = "minQ4";
 input_mind04.style = "margin-top: 5px;";
 
 let label_maxdQ4 = document.createElement("label");
-label_maxdQ4.innerText = "número máximo: ";
-
+label_maxdQ4.innerText = "Número máximo: ";
+label_maxdQ4.className = "Q4";
 let input_maxd04 = document.createElement("input")
 input_maxd04.type = "number";
 input_maxd04.id = "maxQ4";
@@ -55,18 +55,23 @@ div_maxQ4.appendChild(input_maxd04);
 div_btnQ4.appendChild(btnQ4);
 div_btnQ4.style = "margin-top: 5px;"
 
+let pQ4 = document.createElement("p");
+pQ4.id = "rcorners1";
+pQ4.style.display = "none";
+div_resultQ4.appendChild(pQ4);
+
 function clickQuestao4(){
-  
   let minQ4 = parseInt(document.getElementById("minQ4").value);
   let maxQ4 = parseInt(document.getElementById("maxQ4").value);
   let qtdQ4 = parseInt(document.getElementById("qtQ4").value);
+  pQ4.style.display = "block";
   if(isNaN(minQ4) || isNaN(maxQ4) || isNaN(qtdQ4)){
-    div_resultQ4.innerText = "Por favor preencher todos os campos!!"
+    pQ4.innerText = "Por favor preencher todos os campos!!"
   } else if(qtdQ4 > ((maxQ4 - minQ4) + 1)){
-    div_resultQ4.innerText = "A quantidade de números deve ser menor que a diferença entre os intervalos!"
+    pQ4.innerText = "A quantidade de números deve ser menor que a diferença entre os intervalos!"
   } else {
     let resultQ4 = gerarAleatorio(minQ4, maxQ4, qtdQ4);
-    div_resultQ4.innerText = resultQ4;
+    pQ4.innerText = resultQ4;
   }
 
 }

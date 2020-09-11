@@ -7,12 +7,10 @@ let hr2 = document.createElement("hr");
 let div_fat = document.createElement("div");
 let div_btn2 = document.createElement("div");
 let div_res2 = document.createElement("div");
-div_res2.id = "resultadoQ2";  
-div_res2.style = "width: 40%; background-color: #d3d3d3; margin-top: 5px;"
 
 let labelfat = document.createElement("label");
 labelfat.textContent = "Calcular fatorial: ";
-
+labelfat.className = "Q2";
 let inputfat = document.createElement("input");
 inputfat.type = "number";
 inputfat.id = "fat";
@@ -32,18 +30,23 @@ div_fat.appendChild(labelfat);
 div_fat.appendChild(inputfat);
 div_btn2.appendChild(btn2);
 
+let pQ2 = document.createElement("p");
+pQ2.id = "rcorners1";
+pQ2.style.display = "none";
+div_res2.appendChild(pQ2);
 
 function cliqueQuestao02(){
   let fat = parseInt(document.getElementById("fat").value);
+  pQ2.style.display = "block";
   if(isNaN(fat)){
-    document.getElementById("resultadoQ2").innerText = "Campo não preenchido!!!";
+   pQ2.innerText = "Campo não preenchido!!!";
   } else {
     let inicio = new Date().getTime();
     let format = `O fatorial de ${fat} é ${fatorial(fat)}`;
     let fim = new Date().getTime();
     let tempo = fim - inicio;
     format += `\nTempo gasto para calcular: ${tempo < 1 ? "<1" : tempo}ms`
-    document.getElementById("resultadoQ2").innerText = format;
+    pQ2.innerText = format;
   }
 }
 

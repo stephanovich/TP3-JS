@@ -21,14 +21,14 @@ divQ5.appendChild(tipoTriangulo);
 
 let label_ldAdQ5 = document.createElement("label");
 label_ldAdQ5.innerText = "lado A: ";
-
+label_ldAdQ5.classNane = "Q5";
 let input_ldAQ05 = document.createElement("input")
 input_ldAQ05.type = "number";
 input_ldAQ05.id = "ldAQ5";
 
 let label_ldBdQ5 = document.createElement("label");
 label_ldBdQ5.innerText = "lado B: ";
-
+label_ldBdQ5.classNane = "Q5";
 let input_ldB05 = document.createElement("input")
 input_ldB05.type = "number";
 input_ldB05.id = "ldBQ5";
@@ -36,7 +36,7 @@ input_ldB05.style = "margin-top: 5px;"
 
 let label_ldCdQ5 = document.createElement("label");
 label_ldCdQ5.innerText = "lado C: ";
-
+label_ldCdQ5.classNane = "Q5";
 let input_ldCQ05 = document.createElement("input")
 input_ldCQ05.type = "number";
 input_ldCQ05.id = "ldCQ05";
